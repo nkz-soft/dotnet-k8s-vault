@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VaultApplication", "src\VaultIntegrationService\VaultApplication.csproj", "{7D48DDBA-C027-4144-87FF-2ECEB95064D8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{11600E55-6484-43C1-A6CA-3A6E965BDF25}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deployment", "deployment", "{00EFA9EC-9C01-40DE-BAA5-2ACAA880DD82}"
+	ProjectSection(SolutionItems) = preProject
+		deployment\install-vault.sh = deployment\install-vault.sh
+		deployment\config-vault.sh = deployment\config-vault.sh
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "k8s", "k8s", "{6E462941-A93B-4728-95B4-98B166A70565}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".helm", ".helm", "{72D91597-7D18-4590-9161-FBE4E9C4C102}"
+	ProjectSection(SolutionItems) = preProject
+		deployment\k8s\.helm\.helmignore = deployment\k8s\.helm\.helmignore
+		deployment\k8s\.helm\Chart.yaml = deployment\k8s\.helm\Chart.yaml
+		deployment\k8s\.helm\values.yaml = deployment\k8s\.helm\values.yaml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "charts", "charts", "{685F7477-BDAF-4FC0-9F6D-C5F961CF2575}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "templates ", "templates ", "{A35D93EF-74E2-4FF6-A42D-A052EE6926F8}"
+	ProjectSection(SolutionItems) = preProject
+		deployment\k8s\.helm\templates\_helpers.tpl = deployment\k8s\.helm\templates\_helpers.tpl
+		deployment\k8s\.helm\templates\deployment.yaml = deployment\k8s\.helm\templates\deployment.yaml
+		deployment\k8s\.helm\templates\hpa.yaml = deployment\k8s\.helm\templates\hpa.yaml
+		deployment\k8s\.helm\templates\ingress.yaml = deployment\k8s\.helm\templates\ingress.yaml
+		deployment\k8s\.helm\templates\NOTES.txt = deployment\k8s\.helm\templates\NOTES.txt
+		deployment\k8s\.helm\templates\service.yaml = deployment\k8s\.helm\templates\service.yaml
+		deployment\k8s\.helm\templates\serviceaccount.yaml = deployment\k8s\.helm\templates\serviceaccount.yaml
+		deployment\k8s\.helm\templates\configmap.yaml = deployment\k8s\.helm\templates\configmap.yaml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{EF3F7680-9B88-428D-A654-0AF23FCCFC68}"
+	ProjectSection(SolutionItems) = preProject
+		deployment\k8s\.helm\templates\tests\test-connection.yaml = deployment\k8s\.helm\templates\tests\test-connection.yaml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D48DDBA-C027-4144-87FF-2ECEB95064D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D48DDBA-C027-4144-87FF-2ECEB95064D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D48DDBA-C027-4144-87FF-2ECEB95064D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D48DDBA-C027-4144-87FF-2ECEB95064D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7D48DDBA-C027-4144-87FF-2ECEB95064D8} = {11600E55-6484-43C1-A6CA-3A6E965BDF25}
+		{6E462941-A93B-4728-95B4-98B166A70565} = {00EFA9EC-9C01-40DE-BAA5-2ACAA880DD82}
+		{72D91597-7D18-4590-9161-FBE4E9C4C102} = {6E462941-A93B-4728-95B4-98B166A70565}
+		{685F7477-BDAF-4FC0-9F6D-C5F961CF2575} = {72D91597-7D18-4590-9161-FBE4E9C4C102}
+		{A35D93EF-74E2-4FF6-A42D-A052EE6926F8} = {72D91597-7D18-4590-9161-FBE4E9C4C102}
+		{EF3F7680-9B88-428D-A654-0AF23FCCFC68} = {A35D93EF-74E2-4FF6-A42D-A052EE6926F8}
+	EndGlobalSection
+EndGlobal

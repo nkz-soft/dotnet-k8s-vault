@@ -1,0 +1,14 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "VaultSecrets": {
+    {{- with secret "secrets/data/services/dotnet" }}
+    "userName": "{{ .Data.data.username }}",
+    "password": "{{ .Data.data.password }}"
+    {{- end }}
+  }
+}
