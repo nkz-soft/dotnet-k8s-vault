@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "dotnet-vault.fullname" . }}
+  labels:
+    {{- include "dotnet-vault.labels" . | nindent 4 }}
+data:
+    appsettings.json: |
+      {
+        "Logging": {
+          "LogLevel": {
+            "Default": "Information",
+            "Microsoft.AspNetCore": "Warning"
+          }
+        },
+        "VaultSecrets": {
+          "userName": "",
+          "password": ""
+        }
+      }
