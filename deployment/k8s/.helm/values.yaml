@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: ghcr.io/nkz-soft/dotnet-k8s-vault/dotnet-vault-service:latest
+  repository: ghcr.io/nkz-soft/dotnet-k8s-vault/dotnet-vault-service
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "latest"
 
 imagePullSecrets: []
 nameOverride: ""
