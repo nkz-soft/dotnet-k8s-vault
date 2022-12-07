@@ -31,7 +31,7 @@ vault auth enable kubernetes
 vault write auth/kubernetes/config kubernetes_host="https://$KUBERNETES_PORT_443_TCP_ADDR:443"
 
 vault policy write service - <<EOF
-path "secrets" {
+path "secrets/data/services/dotnet" {
   capabilities = ["read"]
 }
 EOF
