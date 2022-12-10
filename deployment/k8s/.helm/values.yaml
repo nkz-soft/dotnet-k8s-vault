@@ -23,14 +23,13 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name: ""
 
+# see https://github.com/hashicorp/vault-k8s/pull/222
 podAnnotations:
   vault.hashicorp.com/agent-inject: "true"
-  vault.hashicorp.com/agent-pre-populate-only: 'true'
-  vault.hashicorp.com/agent-configmap: 'dotnet-vault'
-
-#  vault.hashicorp.com/agent-copy-volume-mounts: 'dotnet-vault'
-#  vault.hashicorp.com/agent-inject-secret-appsettings-ctmpl: ""
-#  vault.hashicorp.com/agent-inject-template-file-appsettings-ctmpl: '/vault/config/appsettings.ctmpl'
+  vault.hashicorp.com/agent-copy-volume-mounts: 'dotnet-vault'
+  vault.hashicorp.com/agent-inject-secret-appsettings.json: ""
+  vault.hashicorp.com/agent-inject-template-file-appsettings.json: '/vault/config/appsettings.json'
+  vault.hashicorp.com/role: service
 podSecurityContext: {}
   # fsGroup: 2000
 

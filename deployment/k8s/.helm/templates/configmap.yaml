@@ -5,55 +5,18 @@ metadata:
   labels:
     {{- include "dotnet-vault.labels" . | nindent 4 }}
 data:
-  config-init.hcl: |
-      "auto_auth" = {
-        "method" = {
-          "config" = {
-            "role" = "service"
-          }
-          "type" = "kubernetes"
+  appsettings.json: |
+    {
+      "Logging": {
+        "LogLevel": {
+          "Default": "Information",
+          "Microsoft.AspNetCore": "Warning"
         }
-        "sink" = {
-          "config" = {
-            "path" = "/home/vault/.token"
-          }
-           "type" = "file"
-        }
+      },
+      "VaultSecrets": {
+        {{` {{- with secret "secrets/data/services/dotnet" }}
+          "userName": "{{ .Data.data.username }}",
+          "password": "{{ .Data.data.password }}"
+        {{- end }} `}}
       }
-      "exit_after_auth" = true
-      "pid_file" = "/home/vault/.pid"
-
-      "template" = {
-        "contents" = "{{` {{ with secret \"secrets/services/dotnet\" }}{{ .Data.data.username }}:{{ .Data.data.password }}{{ end }} `}}"
-        "destination" = "/vault/secrets/app.settings"
-      }
-
-      "vault" = {
-        "address" = "http://vault.default.svc:8200"
-      }
-  config.hcl: |
-    "auto_auth" = {
-      "method" = {
-        "config" = {
-          "role" = "service"
-        }
-        "type" = "kubernetes"
-      }
-      "sink" = {
-        "config" = {
-          "path" = "/home/vault/.token"
-        }
-         "type" = "file"
-      }
-    }
-    "exit_after_auth" = true
-    "pid_file" = "/home/vault/.pid"
-
-    "template" = {
-      "contents" = "{{` {{ with secret \"secrets/services/dotnet\" }}{{ .Data.data.username }}:{{ .Data.data.password }}{{ end }} `}}"
-      "destination" = "/vault/secrets/credentials"
-    }
-
-    "vault" = {
-      "address" = "http://vault.default.svc:8200"
     }
