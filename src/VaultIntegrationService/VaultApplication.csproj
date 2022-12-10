@@ -4,18 +4,7 @@
         <TargetFramework>net7.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <Version>0.1.0</Version>
+        <Version>1.1.0</Version>
     </PropertyGroup>
-
-    <ItemGroup>
-      <Folder Include=".vault" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <None Remove="vault\appsettings.ctmpl" />
-      <Content Include="vault\appsettings.ctmpl">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-    </ItemGroup>
-
+  
 </Project>
