@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: ghcr.io/nkz-soft/dotnet-k8s-vault/dotnet-vault-service
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
 
@@ -25,9 +25,12 @@ serviceAccount:
 
 podAnnotations:
   vault.hashicorp.com/agent-inject: "true"
-  vault.hashicorp.com/role: "service"
-  vault.hashicorp.com/agent-inject-secret-credentials.txt: " secrets/services/dotnet"
+  vault.hashicorp.com/agent-pre-populate-only: 'true'
+  vault.hashicorp.com/agent-configmap: 'dotnet-vault'
 
+#  vault.hashicorp.com/agent-copy-volume-mounts: 'dotnet-vault'
+#  vault.hashicorp.com/agent-inject-secret-appsettings-ctmpl: ""
+#  vault.hashicorp.com/agent-inject-template-file-appsettings-ctmpl: '/vault/config/appsettings.ctmpl'
 podSecurityContext: {}
   # fsGroup: 2000
 
@@ -40,7 +43,7 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: ClusterIP
+  type: NodePort
   port: 80
 
 ingress:

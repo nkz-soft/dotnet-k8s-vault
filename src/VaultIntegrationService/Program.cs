@@ -5,7 +5,7 @@ var app = builder.Build();
 
 
 app.MapHealthChecks("/healthz");
-app.MapGet("/configuration",
+app.MapGet("/config",
     (IConfiguration configuration) => Results.Ok
         (configuration.GetSection("VaultSecrets")
             .AsEnumerable().ToDictionary(k => k.Key, v => v.Value)));

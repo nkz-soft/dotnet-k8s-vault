@@ -38,8 +38,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{EF3F7680
 		deployment\k8s\.helm\templates\tests\test-connection.yaml = deployment\k8s\.helm\templates\tests\test-connection.yaml
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".vault", ".vault", "{CC8CAB57-A796-4FC7-A1BE-1B3B34928A45}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,6 +56,5 @@ Global
 		{685F7477-BDAF-4FC0-9F6D-C5F961CF2575} = {72D91597-7D18-4590-9161-FBE4E9C4C102}
 		{A35D93EF-74E2-4FF6-A42D-A052EE6926F8} = {72D91597-7D18-4590-9161-FBE4E9C4C102}
 		{EF3F7680-9B88-428D-A654-0AF23FCCFC68} = {A35D93EF-74E2-4FF6-A42D-A052EE6926F8}
-		{CC8CAB57-A796-4FC7-A1BE-1B3B34928A45} = {6E462941-A93B-4728-95B4-98B166A70565}
 	EndGlobalSection
 EndGlobal

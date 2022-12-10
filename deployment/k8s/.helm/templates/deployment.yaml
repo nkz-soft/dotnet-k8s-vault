@@ -47,6 +47,22 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+#          volumeMounts:
+#            - mountPath: /vault/config
+#              name: appsettings-ctmpl
+#          volumeMounts:
+#            - name: configmap
+#              mountPath: /app/appsettings.json
+#              subPath: appsettings.json
+#      volumes:
+#        - name: configmap
+#          configMap:
+#            name: {{ include "dotnet-vault.fullname" . }}
+#     volumes:
+#        - configMap:
+#            defaultMode: 420
+#            name: appsettings-ctmpl
+#          name: appsettings-ctmpl
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
