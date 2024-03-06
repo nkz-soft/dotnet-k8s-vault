@@ -12,7 +12,7 @@ function clean_up {
 helm repo add hashicorp https://helm.releases.hashicorp.com
 helm repo update
 
-helm upgrade -i --wait vault hashicorp/vault --version 0.23.0 -n vault
+helm upgrade -i vault hashicorp/vault --version 0.27.0 -n vault --create-namespace --wait
 
 kubectl exec $VAULT_HOST -n vault -- vault operator init -key-shares=1 -key-threshold=1 -format=json > cluster-keys.json
 
