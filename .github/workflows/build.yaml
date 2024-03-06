@@ -4,7 +4,7 @@ on:
   push:
     branches:
     - main
-    - f/*
+    - feature/*
     - fix/*
 
 jobs:
@@ -17,7 +17,7 @@ jobs:
       - name: Setup .NET SDK
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: 7.0.x
+          dotnet-version: 8.0.x
       - name: Restore Dependencies
         run: dotnet restore
       - name: Build
