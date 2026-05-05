@@ -8,6 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deployment", "deployment", 
 	ProjectSection(SolutionItems) = preProject
 		deployment\install-vault.sh = deployment\install-vault.sh
 		deployment\config-vault.sh = deployment\config-vault.sh
+		Dockerfile = Dockerfile
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "k8s", "k8s", "{6E462941-A93B-4728-95B4-98B166A70565}"
